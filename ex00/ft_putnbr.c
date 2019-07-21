@@ -1,4 +1,5 @@
 /* ************************************************************************** */
+
 /*                                                          LE - /            */
 /*                                                              /             */
 /*   ft_putnbr.c                                      .::    .:/ .      .::   */
@@ -6,13 +7,14 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 15:26:35 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 16:00:24 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 16:31:38 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -36,6 +38,7 @@ void	ft_print(int *tab, char **str, int nbr)
 	int i;
 
 	i = 0;
+	//	write(1, "print", 12);
 	while (nbr != tab[i])
 		i++;
 	ft_putstr(str[i]);
@@ -44,41 +47,27 @@ void	ft_print(int *tab, char **str, int nbr)
 
 int		ft_putnbr(int *tab, char **str, int nbr)
 {
+	float nb;
+	ft_putstr(str[0]);
 	int i;
-
 	i = 0;
-	while (nbr < tab[i])
+	nb = nbr;
+	while (nbr > tab[i])
 		i++;
 	if (tab[i] >= 100)
 	{
-		ft_print(tab, str, nbr / tab[i]);
-		ft_print(tab, str, tab[i]);
+		write(1, "1\n", 12);
+		ft_print(tab, str, nbr / tab[i - 1]);
+		write(1, "2\n", 12);
+		ft_print(tab, str, tab[i - 1]);
 	}
 	else
 	{
-		ft_print(tab, str, tab[i]);
+		ft_print(tab, str, tab[i - 1]);
 	}
-	if (nbr == 0 || nbr % tab[i] == 0)
+	if (nbr == 0 || nbr % tab[i - 1] == 0)
 		return (0);
 	else
-		ft_putnbr(tab, str, nbr % tab[i]);
+		ft_putnbr(tab, str, nbr % tab[i - 1]);
 	return (0);
-}
-
-int main(void)
-{
-	int t1[100];
-	char **t2;
-
-	t2 = (char**)malloc(sizeof(char*) * 1000);
-
-	t1[0] = 2;
-	t1[1] = 1;
-	t1[2] = 0;
-	t2[0] = "deux";
-	t2[1] = "un";
-	t2[2] = "zero";
-
-	int nbr = 0;
-	ft_putnbr(t1, t2, nbr);
 }

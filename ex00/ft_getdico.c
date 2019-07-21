@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 14:05:06 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 17:55:51 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,6 +16,10 @@
 #include <stdio.h>
 #include "ourlib.h"
 
+struct b
+{
+	char **arr;
+};
 
 char	*empty_str(char *str)
 {
@@ -30,17 +34,16 @@ char	*empty_str(char *str)
 	return (str);
 }
 
-char    **ft_getdico(char *str)
+struct b	ft_getdico(char *str)
 {
 	int i;
 	int a;
 	char *dest;
 	int j;
-	char	**strs_tab;
+	struct b c;
 
-	dest = (char*)malloc(sizeof(char) * 10000);
-	strs_tab = (char**)malloc(sizeof(char*) * 1000);
 	i = 0;
+	dest = (char*)malloc(sizeof(char) * 10000);
 	j = 0;
 	a = 0;
 	while (str[i])
@@ -53,14 +56,14 @@ char    **ft_getdico(char *str)
 		}
 		if (str[i] == '\n')
 		{
-			strs_tab[a] = dest;
-			printf("%s\n", strs_tab[a]);
+			c.arr[a] = dest;
 			i++;
 			a++;
 			empty_str(dest);
 		}
+		printf("%s\n", c.arr[a]);
 		i++;
 		j = 0;
 	}
-	return (strs_tab);
+	return (c);
 }
