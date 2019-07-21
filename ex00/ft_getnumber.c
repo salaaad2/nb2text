@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/20 18:49:55 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 14:28:12 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 23:37:32 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include "ourlib.h"
 
-int     *ft_sort_tab(int *tab, int size)
+int		*ft_sort_tab(int *tab, int size)
 {
 	int i;
 	int tmp;

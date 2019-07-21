@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 23:33:30 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 23:36:27 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include "ourlib.h"
 
-char    **ft_getdico(char *str)
+char	**ft_getdico(char *str)
 {
 	int		i;
 	int		a;
