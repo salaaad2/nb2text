@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 11:55:38 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 14:05:06 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "ourlib.h"
+
 
 char	*empty_str(char *str)
 {

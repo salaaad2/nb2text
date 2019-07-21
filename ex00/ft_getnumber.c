@@ -6,16 +6,14 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/20 18:49:55 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 13:45:11 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 14:04:36 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-
-int     ft_atoi(char *str);
-
+#include "ourlib.h"
 
 int		*ft_getnumber(char *str)
 {
@@ -44,9 +42,7 @@ int		*ft_getnumber(char *str)
 			i++;
 		if (str[i] == ':')
 		{
-			printf("dest : %s\n", dest);
 			int_tab[j] = ft_atoi(dest);
-			printf("tab : %d\n", int_tab[2]);
 			j++;
 		}
 		dest[0] = '\0';

@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   main.c                                           .::    .:/ .      .::   */
+/*   ourlib.h                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/07/20 14:54:08 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 14:02:32 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/07/21 13:53:05 by fmoenne-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/07/21 14:01:11 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ourlib.h"
+#ifndef _OURLIB_H
+# define _OURLIB_H
 
-int		main(int ac, char **av)
-{
-	char *tmp;
-	char **test;
+int		ft_atoi(char *str);
+int		*ft_getnumber(char *str);
+char	**ft_getdico(char *str);
+char	*ft_parse(void);
 
-	test =(char**)malloc(sizeof(char*) * 100);
-	tmp = (char*)malloc(sizeof(char) * 100000000);
-	if (ac != 2)
-		return (0);
-	else
-	{
-		tmp = ft_parse();
-		ft_getnumber(tmp);
-		ft_getdico(tmp);
-	}
-}
+#endif
