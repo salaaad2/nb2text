@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/20 18:49:55 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 09:42:34 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 13:45:11 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,9 +22,10 @@ int		*ft_getnumber(char *str)
 	int		i;
 	char	*dest;
 	int		j;
-	int		int_tab[100];
+	int		*int_tab;
 	int		a;
 
+	int_tab = malloc(sizeof(int) * 4096);
 	dest = malloc(sizeof(char) * 4096);
 	a = 0;
 	i = 0;
@@ -45,6 +46,7 @@ int		*ft_getnumber(char *str)
 		{
 			printf("dest : %s\n", dest);
 			int_tab[j] = ft_atoi(dest);
+			printf("tab : %d\n", int_tab[2]);
 			j++;
 		}
 		dest[0] = '\0';
