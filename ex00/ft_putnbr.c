@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 15:26:35 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 23:14:32 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 23:35:13 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -49,7 +49,6 @@ int		ft_putnbr(int *tab, char **str, int nbr, int recursive)
 	i = 0;
 	while (nbr > tab[i])
 		i++;
-	//printf("%d", i);
 	if (nbr == tab[i])
 	{
 		if (nbr >= 100)
@@ -69,7 +68,6 @@ int		ft_putnbr(int *tab, char **str, int nbr, int recursive)
 	}
 	else  if (tab[i] <= 20 && tab[i] != 0)
 	{
-		write(1, "tamer", 5);
 		ft_print(tab, str, tab[i]);
 	}
 	else
@@ -79,11 +77,11 @@ int		ft_putnbr(int *tab, char **str, int nbr, int recursive)
 		ft_print(tab, str, tab[i-1]);
 		ft_putstr("-");
 	}
-//	printf("%d\n", nbr % tab[i-1]);
 	if (nbr % tab[i - 1] == 0)
 		return (0);
 	else
-	{recursive = recursive + 1;
+	{
+		recursive = recursive + 1;
 		ft_putnbr(tab, str, nbr % tab[i - 1], recursive);
 	}
 	return (0);

@@ -6,14 +6,14 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 15:28:58 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 23:12:07 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 23:34:24 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ourlib.h"
 
-int        main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	if (ac > 3 || ac < 2)
 		return (0);
@@ -21,7 +21,6 @@ int        main(int ac, char **av)
 	{
 		if (ft_check_arg(av[1]))
 			return (0);
-		//ft_getdico(ft_parse());
 		ft_putnbr(ft_getnumber(ft_parse()), ft_getdico(ft_parse()), ft_atoi(av[1]), 0);
 	}
 	else

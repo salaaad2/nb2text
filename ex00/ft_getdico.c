@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 20:13:58 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 23:33:30 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,12 +18,12 @@
 
 char    **ft_getdico(char *str)
 {
-	int i;
-	int a;
-	char *dest;
-	int j;
+	int		i;
+	int		a;
+	char	*dest;
+	int		j;
 	char	**strs_tab;
-	int prev;
+	int		prev;
 
 	prev = 0;
 	dest = (char*)malloc(sizeof(char) * 10000);
