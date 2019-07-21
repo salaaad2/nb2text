@@ -1,21 +1,23 @@
-CC=gcc
-CFLAGS=-Werror -Wextra -Wall
-LDFLAGS=
-EXEC=rush02
+SRCS    = $(wildcard *.c)
 
-all: $(EXEC)
+OBJS    = ${SRCS:.c=.o}
 
-rush02: *.o
-	$(CC) -o rush02 rush02.o main.o $(LDFLAGS)
+NAME    = Rush02
 
-rush02.o: rush02.c
-	$(CC) -o rush02.o -c rush02.c $(CFLAGS)
+CC        = cc
 
-main.o: main.c rush02.h
-	$(CC) -o main.o -c main.c $(CFLAGS)
+RM        = rm -f
+
+CFLAGS    = -Wall -Wextra -Werror
+
+.c.o    = ${CC} -o ${NAME} ${OBJS}
+
+all:      ${NAME}
 
 clean:
-	rm -rf *.o
+	          ${RM} ${OBJS}
 
-fclean: clean
-	rm -rf $(EXEC)
+fclean:      clean
+	          ${RM} ${NAME}
+
+re:          fclean all

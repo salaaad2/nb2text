@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 17:55:51 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 20:13:58 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,39 +16,24 @@
 #include <stdio.h>
 #include "ourlib.h"
 
-struct b
-{
-	char **arr;
-};
-
-char	*empty_str(char *str)
-{
-	int x;
-
-	x = 0;
-	while (str[x])
-	{
-		str[x] = '\0';
-		x++;
-	}
-	return (str);
-}
-
-struct b	ft_getdico(char *str)
+char    **ft_getdico(char *str)
 {
 	int i;
 	int a;
 	char *dest;
 	int j;
-	struct b c;
+	char	**strs_tab;
+	int prev;
 
-	i = 0;
+	prev = 0;
 	dest = (char*)malloc(sizeof(char) * 10000);
+	strs_tab = (char**)malloc(sizeof(char*) * 1000);
+	i = 0;
 	j = 0;
 	a = 0;
 	while (str[i])
 	{
-		while (str[i] >= 'a' && str[i] <= 'z')
+		while (str[i] > ' ' && str[i] <= '~' && str[i] != ':')
 		{
 			dest[j] = str[i];
 			j++;
@@ -56,14 +41,14 @@ struct b	ft_getdico(char *str)
 		}
 		if (str[i] == '\n')
 		{
-			c.arr[a] = dest;
+			strs_tab[a] = dest + prev;
 			i++;
 			a++;
-			empty_str(dest);
 		}
-		printf("%s\n", c.arr[a]);
 		i++;
-		j = 0;
+		prev = j + 1;
+		j++;
 	}
-	return (c);
+	i = -1;
+	return (strs_tab);
 }
