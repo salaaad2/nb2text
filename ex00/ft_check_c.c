@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 15:36:05 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 23:37:11 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 23:39:07 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,18 +38,18 @@ int		ft_check_dico(char *dico)
 			return (0);
 		while (dico[i] >= '0' && dico[i] <= '9')
 			i++;
-		if (dico[i] != ' ' && dico[i] != ':' && dico[i]  != '\0')
+		if (dico[i] != ' ' && dico[i] != ':' && dico[i] != '\0')
 			return (0);
 		while (dico[i] == ' ' || dico[i] == ':')
 			i++;
 		if (dico[i] < ' ' && dico[i] > '~' && dico[i] != '\0')
 			return (0);
-		if ((dico[i] < ' ' || dico[i] > '~') && dico[i] !='\0')
+		if ((dico[i] < ' ' || dico[i] > '~') && dico[i] != '\0')
 			return (0);
 		while (dico[i] >= ' ' && dico[i] <= '~' && dico[i] != '\n')
 			i++;
 		if (dico[i] != '\n' && dico[i] != '\0')
 			return (0);
 	}
-	return(1);
+	return (1);
 }
