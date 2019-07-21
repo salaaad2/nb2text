@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 10:59:16 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 11:55:38 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,20 @@
 #include <unistd.h>
 #include <stdio.h>
 
-char    *ft_getdico(char *str)
+char	*empty_str(char *str)
+{
+	int x;
+
+	x = 0;
+	while (str[x])
+	{
+		str[x] = '\0';
+		x++;
+	}
+	return (str);
+}
+
+char    **ft_getdico(char *str)
 {
 	int i;
 	int a;
@@ -33,7 +46,6 @@ char    *ft_getdico(char *str)
 		while (str[i] >= 'a' && str[i] <= 'z')
 		{
 			dest[j] = str[i];
-			printf("%c\n", str[i]);
 			j++;
 			i++;
 		}
@@ -43,15 +55,10 @@ char    *ft_getdico(char *str)
 			printf("%s\n", strs_tab[a]);
 			i++;
 			a++;
-			dest[0] = '\0';
+			empty_str(dest);
 		}
-		j = 0;
 		i++;
+		j = 0;
 	}
-	return (dest);
-}
-
-int		main(void)
-{
-	ft_getdico("0: zero\n 42: onetwo\n 30: thirty\n ");
+	return (strs_tab);
 }

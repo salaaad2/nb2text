@@ -6,7 +6,7 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/20 14:54:08 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 10:14:14 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 11:27:29 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,5 +32,6 @@ int		main(int ac, char **av)
 	{
 		tmp = ft_parse();
 		ft_getnumber(tmp);
+		ft_getdico(tmp);
 	}
 }
