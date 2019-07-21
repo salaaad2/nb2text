@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ourlib.h                                         .::    .:/ .      .::   */
+/*   main_c.c                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/07/21 13:53:05 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 15:30:14 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/07/21 15:28:58 by fmoenne-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/07/21 15:45:06 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef _OURLIB_H
-# define _OURLIB_H
+#include "ourlib.h"
 
-int		ft_check_arg(char *str);
-int		ft_atoi(char *str);
-int		*ft_getnumber(char *str);
-char	**ft_getdico(char *str);
-char	*ft_parse(void);
-int		ft_putnbr(int *tab, char **str, int nbr);
-
-#endif
+int        main(int ac, char **av)
+{
+	if (ac > 3 || ac < 2)
+		return (0);
+	else if (ac == 2)
+	{
+		if (ft_check_arg(av[1]))
+			return (0);
+		ft_putnbr(ft_getnumber(ft_parse()), ft_getdico(ft_parse()), 42);
+	}
+	else
+	{
+		if (ft_check_arg(av[2]))
+			return (0);
+		ft_parse();
+	}
+	return (0);
+}

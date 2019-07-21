@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   main.c                                           .::    .:/ .      .::   */
+/*   ft_check_c.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/07/20 14:54:08 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 14:02:32 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/07/21 15:36:05 by fmoenne-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/07/21 15:36:47 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ourlib.h"
-
-int		main(int ac, char **av)
+int ft_check_arg(char *str)
 {
-	char *tmp;
-	char **test;
+	int i;
 
-	test =(char**)malloc(sizeof(char*) * 100);
-	tmp = (char*)malloc(sizeof(char) * 100000000);
-	if (ac != 2)
-		return (0);
-	else
+	i = 0;
+	while (str[i])
 	{
-		tmp = ft_parse();
-		ft_getnumber(tmp);
-		ft_getdico(tmp);
+		if (str[i] < '0' && str[i] > '9')
+			return (1);
+		i++;
 	}
+	return (0);
 }
