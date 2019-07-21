@@ -1,55 +1,57 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_getnumber.c                                   .::    .:/ .      .::   */
+/*   ft_getdico.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/07/20 18:49:55 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 09:42:34 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/07/21 09:45:31 by fmoenne-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/07/21 10:59:16 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 
-int     ft_atoi(char *str);
-
-
-int		*ft_getnumber(char *str)
+char    *ft_getdico(char *str)
 {
-	int		i;
-	char	*dest;
-	int		j;
-	int		int_tab[100];
-	int		a;
+	int i;
+	int a;
+	char *dest;
+	int j;
+	char	**strs_tab;
 
-	dest = malloc(sizeof(char) * 4096);
-	a = 0;
+	dest = (char*)malloc(sizeof(char) * 10000);
+	strs_tab = (char**)malloc(sizeof(char*) * 1000);
 	i = 0;
 	j = 0;
+	a = 0;
 	while (str[i])
 	{
-		while (str[i] == ' ' || (str[i] < '0' && str[i] > '9'))
-			i++;
-		while (str[i] >= '0' && str[i] <= '9')
+		while (str[i] >= 'a' && str[i] <= 'z')
 		{
-			dest[a] = str[i];
-			a++;
-			i++;
-		}
-		while (str[i] == ' ' || (str[i] < '0' && str[i] > '9'))
-			i++;
-		if (str[i] == ':')
-		{
-			printf("dest : %s\n", dest);
-			int_tab[j] = ft_atoi(dest);
+			dest[j] = str[i];
+			printf("%c\n", str[i]);
 			j++;
+			i++;
 		}
-		dest[0] = '\0';
-		a = 0;
+		if (str[i] == '\n')
+		{
+			strs_tab[a] = dest;
+			printf("%s\n", strs_tab[a]);
+			i++;
+			a++;
+			dest[0] = '\0';
+		}
+		j = 0;
 		i++;
 	}
-	return (int_tab);
+	return (dest);
+}
+
+int		main(void)
+{
+	ft_getdico("0: zero\n 42: onetwo\n 30: thirty\n ");
 }

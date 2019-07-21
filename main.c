@@ -6,15 +6,31 @@
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/07/20 14:54:08 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/20 19:00:00 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/07/21 10:14:14 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
+int		*ft_getnumber(char *str);
+char	*ft_parse(void);
+int		ft_atoi(char *str);
+char	**ft_getdico(char *str);
+
+
 int		main(int ac, char **av)
 {
+	char *tmp;
+	char **test;
+
+	test =(char**)malloc(sizeof(char*) * 100);
+	tmp = (char*)malloc(sizeof(char) * 100000000);
 	if (ac != 2)
 		return (0);
 	else
-		ft_getnumber("0: zero 1: one 2: two 1000000000: billion");
+	{
+		tmp = ft_parse();
+		ft_getnumber(tmp);
+	}
 }
