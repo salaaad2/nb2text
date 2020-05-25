@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 const char
 *ft_parse(void)
@@ -23,16 +24,14 @@ const char
 	int		i;
 	int		fd;
 	int		car;
-	char	*c;
+	char	*dict;
 
 	i = 0;
-	c = (char*)malloc(sizeof(char) * 4096);
+	dict = (char*)malloc(sizeof(char) * 4096);
 	if ((fd = open(DICT, O_RDONLY)) < 0)
 		return (0);
-	if ((car = read(fd, c, 4096)) < 0)
+	if ((car = read(fd, dict, 4096)) < 0)
 		return (0);
-	while (c[i])
-		i++;
-	c[i] = '\0';
-	return (c);
+	dict[car - 1] = '\0';
+	return (dict);
 }

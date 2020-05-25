@@ -26,9 +26,9 @@ SRCS 		+= ${SRCS_DIR}main.c
 #-------------------------------- Compiler ------------------------------------#
 #==============================================================================#
 CC			= clang
-#CFLAGS		= -Wall
-#CFLAGS		+= -Wextra
-#CFLAGS		+= -Werror
+CFLAGS		= -Wall
+CFLAGS		+= -Wextra
+CFLAGS		+= -Werror
 #CFLAGS		+= ${DEBUG}
 #CFLAGS		+= ${FSANITIZE}
 #------------------------------------------------------------------------------#

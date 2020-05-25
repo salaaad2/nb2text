@@ -13,7 +13,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "ourlib.h"
+#include <ctype.h>
+#include "../inc/ourlib.h"
 
 int		*ft_sort_tab(int *tab, int size)
 {
@@ -51,22 +52,23 @@ int		*ft_getnumber(const char *str)
 	j = 0;
 	while (str[i])
 	{
-		while (str[i] == ' ' || (str[i] < '0' && str[i] > '9'))
+		while (str[i] == ' ' ||
+			  (str[i] < '0' && str[i] > '9'))
 			i++;
-		while (str[i] >= '0' && str[i] <= '9')
+		while (isdigit(str[i]))
 		{
 			dest[a] = str[i];
 			a++;
 			i++;
 		}
-		while (str[i] == ' ' || (str[i] < '0' && str[i] > '9'))
+		while (str[i] == ' ' ||
+			  (str[i] < '0' && str[i] > '9'))
 			i++;
 		if (str[i] == ':')
 		{
 			int_tab[j] = ft_atoi(dest);
 			j++;
 		}
-		dest[0] = '\0';
 		a = 0;
 		i++;
 	}
