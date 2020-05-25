@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_parse.c                                       .::    .:/ .      .::   */
+/*   ourlib.h                                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/07/20 11:54:42 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 11:30:51 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/07/21 13:53:05 by fmoenne-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/07/21 23:13:09 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
+#ifndef _OURLIB_H
+# define _OURLIB_H
 
-char	*ft_parse(void)
-{
-	int		i;
-	int		f;
-	int		car;
-	char	*c;
+#ifndef DICT
+# define DICT "txt/numbers.dict"
+#endif
 
-	i = 0;
-	c = (char*)malloc(sizeof(char) * 4096);
-	f = open("numbers.dict", O_RDONLY);
-	if (f < 0)
-		return (0);
-	car = read(f, c, 4096);
-	while (c[i])
-		i++;
-	c[i] = '\0';
-	return (c);
-}
+int		ft_check_arg(char *str);
+int		ft_atoi(char *str);
+int		*ft_getnumber(char *str);
+char	**ft_getdico(char *str);
+char	*ft_parse(void);
+int		ft_putnbr(int *tab, char **str, int nbr, int recursive);
+
+#endif

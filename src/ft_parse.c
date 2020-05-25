@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ourlib.h                                         .::    .:/ .      .::   */
+/*   ft_parse.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fmoenne- <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/07/21 13:53:05 by fmoenne-     #+#   ##    ##    #+#       */
-/*   Updated: 2019/07/21 23:13:09 by fmoenne-    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/07/20 11:54:42 by fmoenne-     #+#   ##    ##    #+#       */
+/*   Updated: 2019/07/21 11:30:51 by fmoenne-    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef _OURLIB_H
-# define _OURLIB_H
+#include "../inc/ourlib.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-int		ft_check_arg(char *str);
-int		ft_atoi(char *str);
-int		*ft_getnumber(char *str);
-char	**ft_getdico(char *str);
-char	*ft_parse(void);
-int		ft_putnbr(int *tab, char **str, int nbr, int recursive);
+char	*ft_parse(void)
+{
+	int		i;
+	int		f;
+	int		car;
+	char	*c;
 
-#endif
+	i = 0;
+	c = (char*)malloc(sizeof(char) * 4096);
+	f = open(DICT, O_RDONLY);
+	if (f < 0)
+		return (0);
+	car = read(f, c, 4096);
+	while (c[i])
+		i++;
+	c[i] = '\0';
+	return (c);
+}

@@ -41,7 +41,13 @@ void	ft_print(int *tab, char **str, int nbr)
 	ft_putstr(str[i]);
 }
 
-int		ft_putnbr(int *tab, char **str, int nbr, int recursive)
+/* tab -> ints with the same index as :
+** str -> array of words
+** nbr -> numerical int
+** rec -> utility variable to signal that the function needs
+** to be called again
+ */
+int		ft_putnbr(int *tab, char **str, int nbr, int rec)
 {
 	int i;
 
@@ -71,7 +77,7 @@ int		ft_putnbr(int *tab, char **str, int nbr, int recursive)
 	}
 	else
 	{
-		if (recursive != 0)
+		if (rec != 0)
 			ft_putstr("and ");
 		ft_print(tab, str, tab[i - 1]);
 		ft_putstr("-");
@@ -80,8 +86,9 @@ int		ft_putnbr(int *tab, char **str, int nbr, int recursive)
 		return (0);
 	else
 	{
-		recursive = recursive + 1;
-		ft_putnbr(tab, str, nbr % tab[i - 1], recursive);
+		rec = recursive + 1;
+		ft_putnbr(tab, str, nbr % tab[i - 1], rec);
 	}
+	ft_putstr("\n");
 	return (0);
 }
