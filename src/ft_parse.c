@@ -17,19 +17,20 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-char	*ft_parse(void)
+const char
+*ft_parse(void)
 {
 	int		i;
-	int		f;
+	int		fd;
 	int		car;
 	char	*c;
 
 	i = 0;
 	c = (char*)malloc(sizeof(char) * 4096);
-	f = open(DICT, O_RDONLY);
-	if (f < 0)
+	if ((fd = open(DICT, O_RDONLY)) < 0)
 		return (0);
-	car = read(f, c, 4096);
+	if ((car = read(fd, c, 4096)) < 0)
+		return (0);
 	while (c[i])
 		i++;
 	c[i] = '\0';

@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include "../inc/ourlib.h"
 
-char	**ft_getdico(char *str)
+char	**ft_getdico(const char *str)
 {
 	int		i;
 	int		a;

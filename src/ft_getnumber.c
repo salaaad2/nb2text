@@ -36,13 +36,13 @@ int		*ft_sort_tab(int *tab, int size)
 	return (tab);
 }
 
-int		*ft_getnumber(char *str)
+int		*ft_getnumber(const char *str)
 {
 	int		i;
-	char	*dest;
 	int		j;
-	int		*int_tab;
 	int		a;
+	int		*int_tab;
+	char	*dest;
 
 	int_tab = malloc(sizeof(int) * 4096);
 	dest = malloc(sizeof(char) * 4096);
