@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "ourlib.h"
+#include "../inc/ourlib.h"
 
 char	**ft_getdico(char *str)
 {

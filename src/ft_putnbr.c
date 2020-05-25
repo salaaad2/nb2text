@@ -86,7 +86,7 @@ int		ft_putnbr(int *tab, char **str, int nbr, int rec)
 		return (0);
 	else
 	{
-		rec = recursive + 1;
+		rec = rec + 1;
 		ft_putnbr(tab, str, nbr % tab[i - 1], rec);
 	}
 	ft_putstr("\n");
